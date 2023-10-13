@@ -1,6 +1,14 @@
-import 'styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
+// Context
+import { AuthProvider } from 'context/authContext';
+// Styles
+import 'antd/dist/reset.css';
+import 'styles/globals.scss';
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <AuthProvider>
+      <Component {...pageProps} />
+    </AuthProvider>
+  );
 }
